@@ -1,11 +1,10 @@
 const ROUTE_PATHS = {
     ROOT: '/',
-    DASHBOARD_LANDING: '/main',
-    DASHBOARD_MAIN: '/dashboard/main',
+    DASHBOARD: '/dashboard',
     LOGIN: '/login',
     REGISTER: '/register',
     ABOUT: '/about',
-    SETTINGS: '/dashboard/settings',
+    SETTINGS: '/settings',
     PROFILE: '/profile',
 };
 
