@@ -27,3 +27,9 @@ export type AuthContextType = {
     register : (data : RegisterData) => Promise<void>;
     logout : () => void;
 };
+
+//Authentication Response types 
+export type AuthResponse = {
+    user : User | null;
+    token? : string;
+};
