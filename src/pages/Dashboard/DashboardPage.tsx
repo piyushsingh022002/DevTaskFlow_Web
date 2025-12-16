@@ -2,9 +2,6 @@ import React from "react";
 import { Container, Card, Title, ButtonGroup, ActionButton } from "./Dashboard.styles";
 
 const Dashboard: React.FC = () => {
-  const handleLogout = async () =>{
-    
-  }
   return (
     <Container>
       <Card>

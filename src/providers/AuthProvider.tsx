@@ -37,7 +37,7 @@ export const AuthProvider = ({ children }: Props) => {
         if (response?.token) localStorage.setItem("token", response.token);
         if (response?.user) localStorage.setItem("user", JSON.stringify(response.user));
         setUser(response.user);
-        // return response;
+        return response;
     };
 
     //User Register

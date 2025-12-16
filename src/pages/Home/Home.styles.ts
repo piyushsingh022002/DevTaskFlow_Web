@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
 export const Container = styled.div`
   height: 100vh;
@@ -7,12 +7,14 @@ export const Container = styled.div`
   justify-content: center;
   align-items: center;
 
-  background: linear-gradient(135deg, #1f1f1f, #3c3c3c);
+  background: ${props => props.theme.background};
   padding: 20px;
+  color: ${props => props.theme.text};
+  
 `;
 
 export const Card = styled.div`
-  background: rgba(255, 255, 255, 0.1);
+  background: ${props => props.theme.cardBackground};
   backdrop-filter: blur(14px);
   padding: 40px 50px;
   border-radius: 16px;
@@ -28,7 +30,7 @@ export const Card = styled.div`
 `;
 
 export const Title = styled.h1`
-  color: #fff;
+  color:${props => props.theme.text};
   font-size: 32px;
   letter-spacing: 1px;
   margin: 0;
@@ -57,23 +59,23 @@ export const ActionButton = styled.button<{ variant: "primary" | "secondary" }>`
 
   ${(props) =>
     props.variant === "primary" &&
-    css`
-      background: #4f8cff;
-      color: white;
+    `
+      background: ${props.theme.primary};
+      color: ${props.theme.text};
 
       &:hover {
-        background: #3a74db;
+        opacity: 0.8;
       }
     `}
 
   ${(props) =>
     props.variant === "secondary" &&
-    css`
-      background: #ffffff;
-      color: #1f1f1f;
+    `
+       background: ${props.theme.secondary};
+      color: ${props.theme.text};
 
       &:hover {
-        background: #e8e8e8;
+        opacity: 0.8;
       }
     `}
 `;

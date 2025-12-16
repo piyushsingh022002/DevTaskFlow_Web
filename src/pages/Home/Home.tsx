@@ -7,6 +7,8 @@ const Home: React.FC = () => {
 
     const navigate = useNavigate();
     const {theme, toggleTheme} = useContext(ThemeContext);
+    console.log("Current theme:", theme);
+
   return (
     <Container className={theme}>
       <Card>
