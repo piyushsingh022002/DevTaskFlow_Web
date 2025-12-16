@@ -7,6 +7,7 @@ import Dashboard from "../pages/Dashboard/DashboardPage";
 import LoginPage from "../pages/Auth/LoginPage";
 import RegisterPage from "../pages/Auth/RegisterPage";
 import DemoPage from "../Demo/DemoPage";
+import DemoForm from "../Demo/DemoForm";
 
 
 
@@ -38,6 +39,16 @@ const AppRoutes = () =>{
         element={
           <PublicRoute>
             <DemoPage />
+          </PublicRoute>
+        }
+      
+      />
+
+      <Route 
+        path={ROUTE_PATHS.DEMO_FORM}
+        element={
+          <PublicRoute>
+            <DemoForm />
           </PublicRoute>
         }
       
