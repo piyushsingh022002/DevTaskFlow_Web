@@ -13,9 +13,10 @@ export type LoginCredentials ={
 
 //register data type
 export type RegisterData = {
-    name : string;
+    username : string;
     email: string;
     password : string;
+    confirmPassword : string;
 };
 
 //authentication context type
@@ -32,4 +33,7 @@ export type AuthContextType = {
 export type AuthResponse = {
     user : User | null;
     token? : string;
+    success? : string;
+    errorMessage? :string;
+    
 };

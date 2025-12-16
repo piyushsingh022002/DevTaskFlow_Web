@@ -1,11 +1,12 @@
 import { Route, Routes } from "react-router-dom";
 import ROUTE_PATHS from "./RoutePaths";
 import PublicRoute from "./PublicRoutes";
-import ProtectedRoute from "./ProtectesRoute";
+import ProtectedRoute from "./ProtectedRoute";
 import Home from "../pages/Home/Home";
 import Dashboard from "../pages/Dashboard/DashboardPage";
 import LoginPage from "../pages/Auth/LoginPage";
 import RegisterPage from "../pages/Auth/RegisterPage";
+import DemoPage from "../Demo/DemoPage";
 
 
 
@@ -30,6 +31,16 @@ const AppRoutes = () =>{
             <RegisterPage />
           </PublicRoute>
         }
+      />
+
+      <Route 
+        path={ROUTE_PATHS.DEMO}
+        element={
+          <PublicRoute>
+            <DemoPage />
+          </PublicRoute>
+        }
+      
       />
 
       {/* Home could be public or protected depending on your app */}
