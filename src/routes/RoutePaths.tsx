@@ -7,6 +7,7 @@ const ROUTE_PATHS = {
     SETTINGS: '/settings',
     PROFILE: '/profile',
     DEMO: '/demo',
+    DEMO_FORM: '/demo/form',
 };
 
 export default ROUTE_PATHS;
