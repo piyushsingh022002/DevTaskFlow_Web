@@ -10,7 +10,7 @@ const PublicRoute = ({ children }: Props) => {
 
   if (loading) return <div>Loading...</div>;
 
-  if (isAuthenticated) return <Navigate to="/dashboard/main" replace />;
+  if (isAuthenticated) return <Navigate to="/dashboard" replace />;
 
   return <>{children}</>;
 };

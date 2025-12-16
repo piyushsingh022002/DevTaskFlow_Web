@@ -12,11 +12,6 @@ export const AuthService = {
   //User Registeration
   register: async (data: RegisterData) : Promise<AuthResponse> =>{
     const res = await api.post<AuthResponse>(`${AUTH_ENDPOINT}/register`, data);
-
-    if(res.data.token){
-      localStorage.setItem("access_token", res.data.token);
-    }
-
     return res.data;
   },
 
@@ -33,7 +28,7 @@ export const AuthService = {
 
   //User Logout
   logout: async() : Promise<void> =>{
-    await api.post(`${AUTH_ENDPOINT}/logout`);
+    // await api.post(`${AUTH_ENDPOINT}/logout`);
     localStorage.removeItem("access_token");
   }, 
 

@@ -39,8 +39,8 @@ const LoginPage: React.FC = () => {
 
 		try {
 			setSubmitting(true);
-			await auth.login(credentials);
-			navigate(ROUTE_PATHS.DASHBOARD);
+			const res = await auth.login(credentials);
+			if (res.user) navigate(ROUTE_PATHS.DASHBOARD);
 			} catch (err: unknown) {
 				const message = err instanceof Error ? err.message : String(err);
 				setError(message || "Failed to login. Please try again.");

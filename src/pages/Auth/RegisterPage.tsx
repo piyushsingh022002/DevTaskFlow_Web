@@ -19,9 +19,10 @@ const RegisterPage: React.FC = () => {
 	const auth = useContext(AuthContext);
 	const navigate = useNavigate();
 
-	const [name, setName] = useState("");
+	const [username, setUsername] = useState("");
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
+    const [confirmPassword, setConfirmPassword] = useState("");
 	const [error, setError] = useState<string | null>(null);
 	const [submitting, setSubmitting] = useState(false);
 
@@ -31,12 +32,17 @@ const RegisterPage: React.FC = () => {
 		e.preventDefault();
 		setError(null);
 
-		if (!name || !email || !password) {
+		if (!username || !email || !password || !confirmPassword) {
 			setError("Please fill in all fields.");
 			return;
 		}
 
-		const data: RegisterData = { name, email, password };
+        if (password !== confirmPassword) {
+			setError("Passwords do not match.");
+			return;
+		}
+
+		const data: RegisterData = { username, email, password, confirmPassword };
 
 		try {
 			setSubmitting(true);
@@ -56,13 +62,13 @@ const RegisterPage: React.FC = () => {
 				<Title>Create account</Title>
 				<Form onSubmit={handleSubmit}>
 					<InputGroup>
-						<Label htmlFor="name">Name</Label>
+						<Label htmlFor="username">Username</Label>
 						<Input
-							id="name"
+							id="username"
 							type="text"
-							value={name}
-							onChange={(e) => setName(e.target.value)}
-							placeholder="Your full name"
+							value={username}
+							onChange={(e) => setUsername(e.target.value)}
+							placeholder="Your username Here"
 						/>
 					</InputGroup>
 
@@ -85,6 +91,17 @@ const RegisterPage: React.FC = () => {
 							value={password}
 							onChange={(e) => setPassword(e.target.value)}
 							placeholder="Choose a password"
+						/>
+					</InputGroup>
+
+                    <InputGroup>
+						<Label htmlFor="confirmPassword">Confirm Password</Label>
+						<Input
+							id="confirmPassword"
+							type="password"
+							value={confirmPassword}
+							onChange={(e) => setConfirmPassword(e.target.value)}
+							placeholder="Re-enter your password"
 						/>
 					</InputGroup>
 

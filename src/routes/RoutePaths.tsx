@@ -6,6 +6,7 @@ const ROUTE_PATHS = {
     ABOUT: '/about',
     SETTINGS: '/settings',
     PROFILE: '/profile',
+    DEMO: '/demo',
 };
 
 export default ROUTE_PATHS;
